@@ -1,23 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Mapa Mental</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title data-i18n="title_map">Mapa Mental • Herramientas TIC — Eileen Salas</title>
+  <link rel="icon" href="assets/foto.png" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <img src="assets/Eileen.jpg" alt="Brand Image" id="brand">
-    </header>
-    <main>
-        <h1>Mapa Mental</h1>
-        <img src="mapa-mental.jpg" alt="Mapa Mental">
-        <!-- Content goes here -->
-    </main>
-    <footer>
-        <img src="logosena.png" alt="Logo">
-    </footer>
-    <script src="script.js"></script>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand">
+        <svg width="42" height="42" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="g2" x1="0" x2="1"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#0b63c6"/></linearGradient></defs><rect rx="6" width="24" height="24" fill="url(#g2)"></rect></svg>
+        <h1 class="site-title" data-i18n="map_heading">Mapa Mental: Herramientas TIC</h1>
+      </div>
+
+      <nav class="main-nav" role="navigation" aria-label="Menú principal">
+        <a href="index.html" class="nav-link" data-i18n="nav_home">Inicio</a>
+        <a href="mapa-mental.html" class="nav-link" data-i18n="nav_map">Mapa Mental</a>
+        <a href="historieta.html" class="nav-link" data-i18n="nav_comic">Historieta</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="card">
+      <h2 data-i18n="map_q">¿Qué representa el mapa mental?</h2>
+      <p data-i18n="map_desc">El mapa mental sintetiza cómo organizo las herramientas TIC: categorías principales (comunicación, creación, colaboración y evaluación), ejemplos concretos y conexiones para diseñar actividades educativas integradas.</p>
+
+      <figure class="figure-centered">
+        <img src="assets/mapa-mental.jpg" alt="Mapa mental sobre organización de herramientas TIC" class="responsive-image large">
+        <figcaption data-i18n="map_caption">Mapa mental elaborado como parte de la Evidencia AA2‑Ev2</figcaption>
+      </figure>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small data-i18n="footer_map">Eileen Salas — Evidencia AA2‑Ev2 / AA2‑Ev3 — <span id="current-year-2">2025</span></small>
+    </div>
+  </footer>
+
+  <div id="floating-controls">
+    <button id="btn-theme-2" class="float-btn" aria-label="Cambiar tema" title="Cambiar tema"></button>
+    <button id="btn-lang-2" class="float-btn" aria-label="Cambiar idioma" title="Cambiar idioma">EN</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

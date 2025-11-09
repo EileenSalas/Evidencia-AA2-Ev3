@@ -1,42 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Responsive Site</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title data-i18n="title_index">Bienvenido • Sitio personal — Eileen Salas</title>
+  <link rel="icon" href="assets/Foto.ico" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <img src="assets/Eileen.jpg" alt="Brand Image" id="brand">
-        <nav id="hamburger-menu">
-            <button onclick="toggleMenu()">☰ Menu</button>
-            <ul id="menu-list" style="display: none;">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1>Welcome to My Site</h1>
-        <div class="toast" id="welcome-toast">Welcome, Eileen Johanna Salas de Alba!</div>
-        <div class="scroll-to-top" onclick="scrollToTop()">⬆️</div>
-        <!-- Content goes here -->
-    </main>
-    <footer>
-        <img src="logosena.png" alt="Logo">
-    </footer>
-    <script src="script.js"></script>
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menu-list');
-            menu.style.display = (menu.style.display === 'none' ? 'block' : 'none');
-        }
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand">
+        <svg width="42" height="42" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#0b63c6"/></linearGradient></defs><rect rx="6" width="24" height="24" fill="url(#g)"></rect></svg>
+        <h1 class="site-title" data-i18n="heading">Bienvenido a mi sitio web personal</h1>
+      </div>
 
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    </script>
+      <nav class="main-nav" role="navigation" aria-label="Menú principal">
+        <a href="index.html" class="nav-link" data-i18n="nav_home">Inicio</a>
+        <a href="mapa-mental.html" class="nav-link" data-i18n="nav_map">Mapa Mental</a>
+        <a href="historieta.html" class="nav-link" data-i18n="nav_comic">Historieta</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero card compact">
+      <img src="assets/banner.jpg" alt="Banner sobre tecnología y aprendizaje digital" class="banner responsive-image">
+      <div class="hero-text">
+        <h2 data-i18n="hi_im">Hola — Soy Eileen Salas</h2>
+        <p class="muted" data-i18n="program">Aprendiz del SENA | [Tu programa de formación]</p>
+      </div>
+    </section>
+
+    <section class="card grid-2 compact">
+      <div>
+        <h3 data-i18n="about_title">Sobre mí</h3>
+        <p><strong data-i18n="label_name">Nombre:</strong> <span data-i18n="name">Eileen Salas</span></p>
+        <p><strong data-i18n="label_program">Programa:</strong> <span data-i18n="program_name">[Escribe aquí tu programa de formación]</span></p>
+        <p data-i18n="bio">Soy aprendiz interesada en el uso de las TIC para la creación de contenidos educativos, diseño web y metodologías activas. Este espacio muestra evidencias y recursos creados durante mi formación.</p>
+      </div>
+
+      <aside>
+        <h3 data-i18n="purpose_title">Propósito del sitio</h3>
+        <p data-i18n="purpose_text">Este sitio fue desarrollado para la actividad "Implementar las herramientas TIC" (Evidencia AA2‑Ev3). Aquí presento un mapa mental sobre organización de herramientas TIC y una historieta que ilustra su uso en la educación.</p>
+        <p class="cta-row">
+          <a class="btn" href="mapa-mental.html" data-i18n="btn_map">Ver mapa mental</a>
+          <a class="btn ghost" href="historieta.html" data-i18n="btn_comic">Ver historieta</a>
+        </p>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <small id="footer-credit">Eileen Salas — <span id="current-year">2025</span> — SENA – Aprendiz Digital</small>
+    </div>
+  </footer>
+
+  <!-- Floating controls: theme + translate -->
+  <div id="floating-controls" aria-hidden="false">
+    <button id="btn-theme" class="float-btn" aria-label="Cambiar tema" title="Cambiar tema">
+      <!-- icon inserted by JS -->
+    </button>
+    <button id="btn-lang" class="float-btn" aria-label="Cambiar idioma" title="Cambiar idioma">EN</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
