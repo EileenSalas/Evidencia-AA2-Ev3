@@ -3,43 +3,52 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Historieta: Las TIC en la educación</title>
-  <link rel="stylesheet" href="style.css" />
+  <title data-i18n="title_comic">Historieta • Las TIC en la educación — Eileen Salas</title>
+  <link rel="icon" href="assets/foto.png" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="container header-inner">
-      <h1>Historieta: Las TIC en la educación</h1>
-      <nav class="main-nav">
-        <a href="index.html">Inicio</a>
-        <a href="mapa-mental.html">Mapa Mental</a>
-        <a href="historieta.html">Historieta</a>
+      <div class="brand">
+        <svg width="42" height="42" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="g3" x1="0" x2="1"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#0b63c6"/></linearGradient></defs><rect rx="6" width="24" height="24" fill="url(#g3)"></rect></svg>
+        <h1 class="site-title" data-i18n="comic_heading">Historieta: Las TIC en la educación</h1>
+      </div>
+
+      <nav class="main-nav" role="navigation" aria-label="Menú principal">
+        <a href="index.html" class="nav-link" data-i18n="nav_home">Inicio</a>
+        <a href="mapa-mental.html" class="nav-link" data-i18n="nav_map">Mapa Mental</a>
+        <a href="historieta.html" class="nav-link" data-i18n="nav_comic">Historieta</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <section class="card">
-      <h2>Acerca de la historieta</h2>
-      <p>Tema: Cómo las TIC mejoran la enseñanza y la comunicación en el aula. Herramienta utilizada: Canva (puedes reemplazarla por Pixton, Storyboard That u otra que hayas empleado).</p>
-      <p>Mensaje: La tecnología no reemplaza al maestro, pero potencia su enseñanza mediante herramientas que facilitan la explicación, la colaboración y la creación de contenidos interactivos.</p>
+    <article class="card">
+      <h2 data-i18n="comic_about">Acerca de la historieta</h2>
+      <p><strong data-i18n="comic_topic_label">Tema:</strong> <span data-i18n="comic_topic">Cómo las TIC potencian la enseñanza y la comunicación en el aula.</span><br>
+      <strong data-i18n="comic_tool_label">Herramienta utilizada:</strong> <span data-i18n="comic_tool">Canva (o la que hayas elegido).</span></p>
+      <p data-i18n="comic_message">Mensaje: La tecnología no reemplaza al docente, pero permite nuevas formas de explicar, colaborar y evaluar.</p>
 
-      <div class="comic-grid">
-        <img src="assets/historieta-1.jpg" alt="Historieta - viñeta 1" class="comic-image" />
-        <img src="assets/historieta-2.jpg" alt="Historieta - viñeta 2" class="comic-image" />
-        <img src="assets/historieta-3.jpg" alt="Historieta - viñeta 3" class="comic-image" />
-        <img src="assets/historieta-4.jpg" alt="Historieta - viñeta 4" class="comic-image" />
-      </div>
+      <figure class="figure-centered">
+        <img src="assets/historieta.jpg" alt="Historieta completa sobre las TIC en la educación" class="responsive-image large">
+        <figcaption data-i18n="comic_caption">Historieta elaborada para la Evidencia AA2‑Ev3 (una única historieta)</figcaption>
+      </figure>
 
-      <blockquote class="quote">“La tecnología no reemplaza al maestro, pero potencia su enseñanza.”</blockquote>
-    </section>
+      <blockquote class="quote" data-i18n="comic_quote">“La tecnología no reemplaza al maestro, pero potencia su enseñanza.”</blockquote>
+    </article>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <small>Eileen Salas — 2025</small>
+    <div class="container footer-inner">
+      <small data-i18n="footer_comic">Eileen Salas — <span id="current-year-3">2025</span></small>
     </div>
   </footer>
+
+  <div id="floating-controls">
+    <button id="btn-theme-3" class="float-btn" aria-label="Cambiar tema" title="Cambiar tema"></button>
+    <button id="btn-lang-3" class="float-btn" aria-label="Cambiar idioma" title="Cambiar idioma">EN</button>
+  </div>
 
   <script src="script.js"></script>
 </body>
