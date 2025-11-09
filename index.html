@@ -1,33 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Sitio Web Personal</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bienvenido a mi sitio web personal</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Bienvenido a mi sitio web</h1>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="mapa-mental.html">Mapa Mental</a>
-      <a href="historieta.html">Historieta</a>
-    </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1>Bienvenido a mi sitio web personal</h1>
+      <nav class="main-nav">
+        <a href="index.html">Inicio</a>
+        <a href="mapa-mental.html">Mapa Mental</a>
+        <a href="historieta.html">Historieta</a>
+      </nav>
+    </div>
   </header>
 
-  <section class="intro">
-    <h2>Sobre mí</h2>
-    <p>Hola, soy <strong>[Tu nombre completo]</strong>. Soy aprendiz del SENA y me apasiona el uso de las herramientas TIC para el aprendizaje, la comunicación y la creación de contenidos digitales.</p>
+  <main class="container">
+    <section class="hero card">
+      <img src="assets/banner.jpg" alt="Banner tecnología y aprendizaje" class="banner" />
+    </section>
 
-    <h3>Propósito del sitio</h3>
-    <p>Este sitio fue creado como parte de la actividad “Implementar las herramientas TIC”. Aquí compartiré mi mapa mental, una historieta digital y mis reflexiones sobre el uso de las TIC en la vida diaria.</p>
+    <section class="card about">
+      <h2>Sobre mí</h2>
+      <p><strong>Nombre:</strong> Eileen Salas</p>
+      <p><strong>Programa de formación:</strong> [Escribe aquí tu programa de formación]</p>
+      <p><strong>Breve biografía:</strong> Soy aprendiz interesado/a en el uso de las TIC para la creación de contenidos educativos, diseño web y herramientas digitales. En este sitio comparto mis avances y materiales desarrollados para las evidencias del SENA.</p>
+    </section>
 
-    <img src="https://via.placeholder.com/600x300" alt="Imagen representativa" class="banner">
-  </section>
+    <section class="card purpose">
+      <h2>Propósito del sitio</h2>
+      <p>Este sitio web fue desarrollado para la actividad de aprendizaje "Implementar las herramientas TIC" (Evidencia AA2-Ev3). Su objetivo es mostrar el uso de herramientas digitales en la creación de contenido educativo a través de un mapa mental y una historieta.</p>
+    </section>
+  </main>
 
-  <footer>
-    <p>© 2025 - Creado por [Tu nombre]. | SENA - Aprendiz Digital</p>
+  <footer class="site-footer">
+    <div class="container">
+      <small>Eileen Salas — 2025 — SENA – Aprendiz Digital</small>
+    </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
