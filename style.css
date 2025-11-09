@@ -1,190 +1,484 @@
-:root{
-  --bg:#eaf2ff;
-  --card:#ffffff;
-  --text:#04243a;
-  --accent-1:#0b63c6;
-  --accent-2:#3b82f6;
-  --muted:#6b7280;
-  --glass: rgba(11,99,198,0.08);
-  --radius:12px;
-  --max-width:1100px;
+:root {
+  --bg: #eaf2ff;
+  --card: #ffffff;
+  --text: #04243a;
+  --accent-1: #0b63c6;
+  --accent-2: #3b82f6;
+  --muted: #6b7280;
+  --glass: rgba(11, 99, 198, 0.08);
+  --radius: 12px;
+  --max-width: 1100px;
 }
 
 /* Dark theme variables */
-:root.dark{
-  --bg:linear-gradient(180deg,#071025,#082036);
-  --card:#0f1720;
-  --text:#e6f0ff;
-  --accent-1:#1e6fe8;
-  --accent-2:#3b82f6;
-  --muted:#9fb4d9;
-  --glass: rgba(255,255,255,0.04);
+:root.dark {
+  --bg: linear-gradient(180deg, #071025, #082036);
+  --card: #0f1720;
+  --text: #e6f0ff;
+  --accent-1: #1e6fe8;
+  --accent-2: #3b82f6;
+  --muted: #9fb4d9;
+  --glass: rgba(255, 255, 255, 0.04);
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
   font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.45;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.45;
 }
 
-.container{max-width:var(--max-width);margin:0 auto;padding:1rem}
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem;
+}
 
 /* Header */
-.site-header{background:linear-gradient(90deg,var(--accent-2),var(--accent-1));color:#fff;padding:0.8rem 0;position:sticky;top:0;z-index:40;backdrop-filter: blur(6px)}
-.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-
-/* AJUSTES PARA EL LOGO */
-.brand{
-  display:flex;
-  align-items:center;
-  gap:0.75rem; 
+.site-header {
+  background: linear-gradient(90deg, var(--accent-2), var(--accent-1));
+  color: #fff;
+  padding: 0.8rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(6px);
 }
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Logo */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
 .brand .home-link {
-    display: flex;
-    align-items: center;
-    line-height: 0; 
-    height: 100%; 
+  display: flex;
+  align-items: center;
+  line-height: 0;
+  height: 100%;
 }
+
 .brand .site-logo {
-    width: 42px; 
-    height: 42px;
-    border-radius: 8px; 
-    object-fit: cover; 
-    display: block;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
 }
 
-.site-title{font-size:1rem;margin:0;font-weight:700}
+.site-title {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 700;
+}
 
-/* OCULTAR BOTÓN DE HAMBURGUESA EN ESCRITORIO */
+/* Menú */
 .menu-toggle {
-    display: none; /* Oculto por defecto en escritorio */
+  display: none;
 }
 
-/* ESTILOS DE NAVEGACIÓN EN ESCRITORIO */
-.main-nav a{color:#fff;text-decoration:none;margin-left:0.6rem;padding:0.35rem 0.6rem;border-radius:8px;transition:transform .15s,background .15s}
-.main-nav a:hover{background:rgba(255,255,255,0.09);transform:translateY(-3px);text-decoration:underline}
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 0.6rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 8px;
+  transition: transform 0.15s, background 0.15s;
+}
 
-/* Cards and layout */
-.card{background:var(--card);border-radius:var(--radius);padding:1rem;margin:1rem 0;box-shadow:0 8px 24px rgba(6,24,63,0.06)}
-.compact{padding:0.8rem}
-.grid-2{display:grid;grid-template-columns:1fr 360px;gap:1rem;align-items:start}
-@media (max-width:900px){.grid-2{grid-template-columns:1fr}}
-.hero{display:flex;flex-direction:column;gap:0.5rem;align-items:flex-start;overflow:hidden}
-.banner{width:100%;height:auto;border-radius:10px;display:block;object-fit:cover;max-height:260px;box-shadow:0 8px 20px rgba(11,99,198,0.06)}
-.hero-text h2{margin:0;font-size:1.25rem}
-.muted{color:var(--muted);font-size:0.95rem}
+/* MODIFICACIÓN: Se elimina el "text-decoration: underline;" */
+.main-nav a:hover {
+  background: rgba(255, 255, 255, 0.09);
+  transform: translateY(-3px);
+  text-decoration: none; /* Asegura que no haya subrayado en hover */
+}
+
+/* Cards */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 8px 24px rgba(6, 24, 63, 0.06);
+}
+
+.compact {
+  padding: 0.8rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 1rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+.banner {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  object-fit: cover;
+  max-height: 260px;
+  box-shadow: 0 8px 20px rgba(11, 99, 198, 0.06);
+}
+
+.hero-text h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
 
 /* Buttons */
-.btn{display:inline-block;padding:0.45rem 0.9rem;border-radius:10px;background:linear-gradient(90deg,var(--accent-1),var(--accent-2));color:#fff;text-decoration:none;font-weight:700;box-shadow:0 6px 18px rgba(11,99,198,0.16)}
-.btn.ghost{background:transparent;color:var(--accent-1);border:1px solid rgba(11,99,198,0.12);margin-left:0.5rem}
+.btn {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(11, 99, 198, 0.16);
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--accent-1);
+  border: 1px solid rgba(11, 99, 198, 0.12);
+  margin-left: 0.5rem;
+}
 
 /* Images */
-.responsive-image{width:100%;height:auto;border-radius:10px;display:block}
-.responsive-image.large{max-width:900px;margin:0.8rem auto;display:block}
-.figure-centered{margin-top:1rem;text-align:center}
-.comic-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.6rem}
-.comic-image{width:100%;height:auto;border-radius:8px;transition:transform .18s,box-shadow .18s}
-.comic-image:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 12px 30px rgba(11,99,198,0.12)}
+.responsive-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
 
-/* Floating controls */
-#floating-controls{position:fixed;right:1rem;bottom:1rem;display:flex;flex-direction:column;gap:0.6rem;z-index:999}
-.float-btn{width:48px;height:48px;border-radius:50%;border:0;background:linear-gradient(90deg,var(--accent-1),var(--accent-2));color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(11,99,198,0.18);cursor:pointer}
-.float-btn:hover{transform:translateY(-4px)}
+.responsive-image.large {
+  max-width: 900px;
+  margin: 0.8rem auto;
+  display: block;
+}
 
-/* Toast (Centrado en la parte inferior) */
-.site-toast{
-  position:fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 1rem;
-  background:linear-gradient(90deg,var(--accent-1),var(--accent-2));
-  color:#fff;
-  padding:0.6rem 0.9rem;
-  border-radius:8px;
-  box-shadow:0 10px 30px rgba(11,99,198,0.16);
-  z-index:9999;
+.figure-centered {
+  margin-top: 1rem;
   text-align: center;
 }
 
-/* Footer */
-.site-footer{padding:1rem 0;color:var(--muted);border-top:1px solid rgba(6,24,63,0.04);background:transparent}
-.footer-inner{display:flex;align-items:center;justify-content:center}
+.comic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.6rem;
+}
+
+.comic-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+
+.comic-image:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 12px 30px rgba(11, 99, 198, 0.12);
+}
+
+/* Floating controls */
+#floating-controls {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  z-index: 999;
+}
+
+.float-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 0;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(11, 99, 198, 0.18);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.float-btn:hover {
+  transform: translateY(-4px);
+}
+
+/* Toast */
+.site-toast {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 1rem;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  color: #fff;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(11, 99, 198, 0.16);
+  z-index: 9999;
+  text-align: center;
+}
 
 /* Quote */
-.quote{font-style:italic;margin-top:1rem;color:var(--muted);border-left:3px solid var(--accent-1);padding-left:0.8rem}
+.quote {
+  font-style: italic;
+  margin-top: 1rem;
+  color: var(--muted);
+  border-left: 3px solid var(--accent-1);
+  padding-left: 0.8rem;
+}
 
-/* Small screens (MÓVIL) */
-@media (max-width:600px){
-  /* 1. ESTRUCTURA DE LA CABECERA EN MÓVILES */
-  .header-inner{
-    flex-direction: row; 
+/* Footer */
+.site-footer {
+  background: linear-gradient(180deg, var(--accent-1), var(--accent-2));
+  color: #ffffff;
+  padding: 3rem 1rem 1.5rem;
+  border-top: none;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  /* Permite que las columnas se envuelvan si es necesario */
+  flex-wrap: wrap; 
+}
+
+.footer-col {
+  /* Define un ancho flexible con un mínimo de 150px, 
+     lo que ayuda a la responsividad antes de que se active la media query */
+  flex: 1 1 150px; 
+}
+
+.footer-col h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  border-left: 3px solid rgba(255, 255, 255, 0.6);
+  padding-left: 0.6rem;
+}
+
+.footer-col p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.4rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: #fff;
+  transform: translateX(4px);
+}
+
+.footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 0.6rem;
+}
+
+.footer-social a svg {
+  transition: fill 0.25s ease, transform 0.25s ease;
+}
+
+.footer-social a:hover svg {
+  fill: #fff;
+  transform: scale(1.1);
+}
+
+.footer-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 1rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  /* --- Header y Navegación Responsive --- */
+  .header-inner {
+    flex-direction: row;
     align-items: center;
-    justify-content: space-between; 
+    justify-content: space-between;
   }
 
-  /* 2. MOSTRAR EL BOTÓN HAMBURGUESA */
-  .menu-toggle{
-    display: block; 
+  .menu-toggle {
+    display: flex;
     background: none;
     border: none;
     color: #fff;
-    padding: 0.5rem;
+    padding: 0;
     cursor: pointer;
-    z-index: 50; 
-  }
-  .menu-toggle svg {
-    width: 30px; 
-    height: 30px;
+    z-index: 50;
+    width: 46px;
+    height: 46px;
+    position: relative;
+    overflow: hidden;
   }
 
-  /* 3. OCULTAR Y ESTILIZAR EL MENÚ PRINCIPAL */
-  .main-nav{
+  .menu-toggle .icon-menu-open,
+  .menu-toggle .icon-menu-close {
     position: absolute;
-    top: 100%; 
+    top: 0;
     left: 0;
     width: 100%;
-    max-height: 0; 
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .menu-toggle .icon-menu-open {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+
+  .menu-toggle .icon-menu-close {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.8);
+  }
+
+  .menu-toggle[aria-expanded="true"] .icon-menu-open {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.8);
+  }
+
+  .menu-toggle[aria-expanded="true"] .icon-menu-close {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 0;
     overflow: hidden;
-    flex-direction: column; 
-    background: var(--accent-1); 
+    flex-direction: column;
+    background: var(--accent-1);
     transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
     padding: 0 1rem;
   }
-  
-  /* ESTADO ABIERTO (Clase que se añade con JavaScript) */
+
   .main-nav.is-open {
-    max-height: 300px; 
+    max-height: 300px;
     padding: 1rem 1rem;
   }
 
-  .main-nav a{
+  .main-nav a {
     display: block;
     margin: 0.5rem 0;
     padding: 0.75rem 1rem;
     border-radius: 4px;
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
     text-align: center;
   }
   
-  /* Ajustes secundarios */
-  .site-title{font-size:0.95rem}
-  
-  .brand .site-logo {
-    width: 36px;
-    height: 36px;
+  /* --- Footer Responsive --- */
+  .footer-grid {
+    /* Clave para responsividad: apila las columnas verticalmente */
+    flex-direction: column;
+    gap: 2.5rem; /* Espacio vertical entre las secciones apiladas */
+    text-align: center; /* Centra el texto del footer en móvil */
   }
   
-  /* CORRECCIÓN: HACER VISIBLE EL TÍTULO DE LA PÁGINA (h1) */
-  .brand h1 {
-    /* Eliminamos el 'display: none;' que lo ocultaba */
-    display: block;
-    margin: 0; /* Asegura que no haya márgenes excesivos */
-    /* El tamaño de fuente ya está reducido por .site-title */
+  .footer-col {
+    flex: 1 1 100%; /* Asegura que cada columna ocupe todo el ancho */
+  }
+
+  .footer-col h4 {
+    /* Ajuste para centrar el título en modo columna */
+    border-left: none; /* Elimina la línea lateral */
+    padding-left: 0;
+    /* Para centrar un elemento de bloque con display:inline-block */
+    display: inline-block; 
+  }
+
+  .footer-social {
+    justify-content: center; /* Centra los iconos sociales */
   }
 }
