@@ -120,6 +120,22 @@
 
   // event listeners
   document.addEventListener('DOMContentLoaded', function(){
+    // --- LÓGICA DEL MENÚ HAMBURGUESA ---
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+    
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', function() {
+            // 1. Alterna la clase 'is-open' (usada por el CSS para mostrar/ocultar)
+            mainNav.classList.toggle('is-open');
+            
+            // 2. Actualiza el atributo ARIA para accesibilidad
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+            menuToggle.setAttribute('aria-expanded', !isExpanded);
+        });
+    }
+    // ------------------------------------
+
     // load theme
     const savedTheme = localStorage.getItem(THEME_KEY) || 'light';
     setTheme(savedTheme);
