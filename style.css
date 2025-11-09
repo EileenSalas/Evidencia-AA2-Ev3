@@ -97,8 +97,20 @@ body{
 .float-btn{width:48px;height:48px;border-radius:50%;border:0;background:linear-gradient(90deg,var(--accent-1),var(--accent-2));color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(11,99,198,0.18);cursor:pointer}
 .float-btn:hover{transform:translateY(-4px)}
 
-/* Toast */
-.site-toast{position:fixed;right:1rem;bottom:5.5rem;background:linear-gradient(90deg,#0b63c6,#3b82f6);color:#fff;padding:0.6rem 0.9rem;border-radius:8px;box-shadow:0 10px 30px rgba(11,99,198,0.16);z-index:9999}
+/* Toast (Centrado en la parte inferior) */
+.site-toast{
+  position:fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 1rem;
+  background:linear-gradient(90deg,var(--accent-1),var(--accent-2));
+  color:#fff;
+  padding:0.6rem 0.9rem;
+  border-radius:8px;
+  box-shadow:0 10px 30px rgba(11,99,198,0.16);
+  z-index:9999;
+  text-align: center;
+}
 
 /* Footer */
 .site-footer{padding:1rem 0;color:var(--muted);border-top:1px solid rgba(6,24,63,0.04);background:transparent}
@@ -107,54 +119,51 @@ body{
 /* Quote */
 .quote{font-style:italic;margin-top:1rem;color:var(--muted);border-left:3px solid var(--accent-1);padding-left:0.8rem}
 
-/* Small screens */
+/* Small screens (MÓVIL) */
 @media (max-width:600px){
   /* 1. ESTRUCTURA DE LA CABECERA EN MÓVILES */
-  /* Volvemos a la disposición original: logo y menú-toggle en una línea */
   .header-inner{
-    flex-direction: row; /* Asegura que el logo y el botón estén en fila */
+    flex-direction: row; 
     align-items: center;
-    justify-content: space-between; /* Distribuye espacio entre logo/título y botón */
+    justify-content: space-between; 
   }
 
   /* 2. MOSTRAR EL BOTÓN HAMBURGUESA */
   .menu-toggle{
-    display: block; /* Muestra el botón en móviles */
+    display: block; 
     background: none;
     border: none;
     color: #fff;
     padding: 0.5rem;
     cursor: pointer;
-    z-index: 50; /* Asegura que esté sobre el menú desplegado */
+    z-index: 50; 
   }
   .menu-toggle svg {
-    width: 30px; /* Tamaño más adecuado para móviles */
+    width: 30px; 
     height: 30px;
   }
 
   /* 3. OCULTAR Y ESTILIZAR EL MENÚ PRINCIPAL */
   .main-nav{
-    /* Posición y tamaño en estado CERRADO (por defecto en móvil) */
     position: absolute;
-    top: 100%; /* Colocarlo justo debajo de la cabecera */
+    top: 100%; 
     left: 0;
     width: 100%;
-    max-height: 0; /* Oculta el menú */
+    max-height: 0; 
     overflow: hidden;
-    flex-direction: column; /* Apila los enlaces verticalmente */
-    background: var(--accent-1); /* Fondo para el menú desplegable */
+    flex-direction: column; 
+    background: var(--accent-1); 
     transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
     padding: 0 1rem;
   }
   
   /* ESTADO ABIERTO (Clase que se añade con JavaScript) */
   .main-nav.is-open {
-    max-height: 300px; /* Altura suficiente para mostrar todos los enlaces */
+    max-height: 300px; 
     padding: 1rem 1rem;
   }
 
   .main-nav a{
-    /* Estilos de los enlaces dentro del menú desplegado */
     display: block;
     margin: 0.5rem 0;
     padding: 0.75rem 1rem;
@@ -171,9 +180,11 @@ body{
     height: 36px;
   }
   
-  /* Ocultamos el título si el espacio es muy limitado (opcional, pero mejora la vista) */
+  /* CORRECCIÓN: HACER VISIBLE EL TÍTULO DE LA PÁGINA (h1) */
   .brand h1 {
-    /* Mantenemos el display flex en .brand, pero ocultamos el h1 */
-    display: none;
+    /* Eliminamos el 'display: none;' que lo ocultaba */
+    display: block;
+    margin: 0; /* Asegura que no haya márgenes excesivos */
+    /* El tamaño de fuente ya está reducido por .site-title */
   }
 }
